@@ -1,0 +1,6 @@
+services:
+  simple-app:
+    build: .
+    container_name: simple-app
+    ports:
+      - "8080:8080"
