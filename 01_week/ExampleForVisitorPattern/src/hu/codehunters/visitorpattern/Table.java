@@ -3,7 +3,7 @@ package hu.codehunters.visitorpattern;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Table {
+public class Table implements Element{
 
     private String startTag;
     private String endTag;
@@ -64,5 +64,10 @@ public class Table {
 
     public void setLengthOfColumn(int lengthOfColumn) {
         this.lengthOfColumn = lengthOfColumn;
+    }
+
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visit(this);
     }
 }

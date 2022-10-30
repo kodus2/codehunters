@@ -17,7 +17,7 @@ public class Main {
         table.setData(populateData());
         System.out.println("\n\nBefore visitor-----------------\n" + table.generateTable());
         var csvVisitor = new CsvVisitor("", "", ",");
-        csvVisitor.visit(table);
+        table.accept(csvVisitor);
         System.out.println("\n\nAfter visitor-----------------\n" + table.generateTable());
     }
 
