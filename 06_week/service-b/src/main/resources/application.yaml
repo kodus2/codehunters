@@ -1,0 +1,22 @@
+server:
+  port: 8181
+
+spring:
+  data:
+    rest:
+      basePath: /home
+
+  datasource:
+    url: jdbc:h2:mem:valami
+    username: amir
+    password:
+
+  h2:
+    console:
+      path: /db
+      enabled: true
+
+management:
+  endpoints:
+    web:
+      base-path: /details

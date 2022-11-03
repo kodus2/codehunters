@@ -1,0 +1,34 @@
+plugins {
+    id 'org.springframework.boot' version '2.7.5'
+    id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+    id 'java'
+}
+
+group = 'hu.codehunters'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+repositories {
+    mavenCentral()
+}
+
+ext{
+    h2DatabaseVersion = '2.1.214'
+    lombokVersion = '1.18.24'
+}
+
+dependencies {
+    implementation "org.springframework.boot:spring-boot-starter-data-rest"
+    implementation "org.springframework.boot:spring-boot-starter-data-jpa"
+    implementation "org.springframework.boot:spring-boot-starter-actuator"
+    testImplementation "org.springframework.boot:spring-boot-starter-test"
+    runtimeOnly "com.h2database:h2:$h2DatabaseVersion"
+    compileOnly "org.projectlombok:lombok:$lombokVersion"
+    annotationProcessor "org.projectlombok:lombok:$lombokVersion"
+    testCompileOnly "org.projectlombok:lombok:$lombokVersion"
+    testAnnotationProcessor "org.projectlombok:lombok:$lombokVersion"
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}

@@ -1,0 +1,12 @@
+services:
+  hello-app:
+    image: bihtam/hello-app
+    ports:
+      - "8080:8080"
+    networks:
+      - back-tier
+
+networks:
+  back-tier:
+    name: backend
+

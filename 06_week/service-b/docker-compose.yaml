@@ -1,0 +1,7 @@
+services:
+  serviceb:
+    build:
+      dockerfile: Dockerfile
+    container_name: serviceb
+    ports:
+      - "8181:8181"
