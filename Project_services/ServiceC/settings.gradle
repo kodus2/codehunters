@@ -1,0 +1,3 @@
+rootProject.name = 'ServiceC'
+
+include 'form-service'

@@ -1,0 +1,17 @@
+plugins {
+    id 'java'
+    id 'checkstyle'
+    id 'com.github.spotbugs-base'           version '5.0.13'
+}
+
+allprojects {
+    apply plugin: 'java'
+    apply plugin: 'checkstyle'
+    apply plugin: 'com.github.spotbugs-base'
+}
+
+task printVersion {
+    doLast {
+        println project.version
+    }
+}
